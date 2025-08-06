@@ -23,7 +23,9 @@ sudo yum install -y iptables conntrack
 
 echo "Starting Minikube..."
 # --force is rarely needed unless you're overriding previous settings.
-minikube start --driver=docker
+#minikube start --driver=docker
+minikube start --driver=docker --force
+
 
 echo "Verifying Minikube installation..."
 minikube status
@@ -31,3 +33,4 @@ kubectl get nodes
 
 echo " Minikube setup complete!"
 echo "Please log out and log back in (or run 'newgrp docker') to use Docker without sudo."
+
