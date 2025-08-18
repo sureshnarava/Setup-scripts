@@ -24,3 +24,13 @@ export KOPS_STATE_STORE=s3://suresh0402.k8s.local
 kops create cluster --name suresh.k8s.local --zones us-east-1a,us-east-1b --master-count 1 --master-size t2.medium --master-volume-size 30 --node-count 2 --node-size t2.micro --node-volume-size 20
 #kops create cluster --name suresh.k8s.local --zones us-east-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.medium
 kops update cluster --name suresh.k8s.local --yes --admin
+
+#TO DELETE THE CLUSTER 
+#export KOPS_STATE_STORE=s3://your-bucket-name
+#kops get cluster 
+#kops delete cluster cluster-name --yes
+
+# * list clusters with: kops get cluster
+# * edit this cluster with: kops edit cluster suresh.k8s.local
+# * edit your node instance group: kops edit ig --name=suresh.k8s.local nodes-us-east-1a
+# * edit your control-plane instance group: kops edit ig --name=suresh.k8s.local control-plane-us-east-1a
